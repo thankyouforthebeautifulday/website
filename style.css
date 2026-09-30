@@ -26,3 +26,10 @@ header nav{display:flex;gap:32px;align-items:center}.brand-links{padding:0 8% 90
 @media(max-width:700px){.about h2{font-size:clamp(42px,10.5vw,68px)}}
 
 .thanks-button{align-items:center}.thanks-label{display:flex;align-items:center;gap:14px}.tap-label{font-size:10px;letter-spacing:.12em;opacity:.75}
+.tap-label{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:30px;background:#fff;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.1em;opacity:1;animation:tap-pulse 2.4s ease-in-out infinite}
+.tap-label::after{content:"";position:absolute;inset:-4px;border:1px solid currentColor;border-radius:inherit;opacity:0;animation:tap-ring 2.4s ease-out infinite}
+.thanks-button:hover .tap-label{background:var(--red);color:#fff}.thanks-button:active{transform:scale(.96)}
+@keyframes tap-pulse{0%,65%,100%{transform:scale(1)}25%{transform:scale(1.1)}40%{transform:scale(1)}}
+@keyframes tap-ring{0%,65%,100%{opacity:0;transform:scale(1)}15%{opacity:.6}55%{opacity:0;transform:scale(1.35)}}
+.about-copy .about-signoff{color:var(--red)}.about-japanese{margin-top:40px;padding-top:32px;border-top:1px solid var(--line);font-size:14px;line-height:2;letter-spacing:.025em}.about-copy .about-japanese p{color:var(--ink)}.about-copy .about-japanese p:first-child{color:var(--red)}
+@media(prefers-reduced-motion:reduce){.tap-label,.tap-label::after{animation:none}.tap-label::after{display:none}}

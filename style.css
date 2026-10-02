@@ -33,3 +33,5 @@ header nav{display:flex;gap:32px;align-items:center}.brand-links{padding:0 8% 90
 @keyframes tap-ring{0%,65%,100%{opacity:0;transform:scale(1)}15%{opacity:.6}55%{opacity:0;transform:scale(1.35)}}
 .about-copy .about-signoff{color:var(--red)}.about-japanese{margin-top:40px;padding-top:32px;border-top:1px solid var(--line);font-size:14px;line-height:2;letter-spacing:.025em}.about-copy .about-japanese p{color:var(--ink)}.about-copy .about-japanese p:first-child{color:var(--red)}
 @media(prefers-reduced-motion:reduce){.tap-label,.tap-label::after{animation:none}.tap-label::after{display:none}}
+/* A soft white edge hints at the content below the hero. */
+.hero{position:relative;isolation:isolate}.hero::after{content:"";position:absolute;z-index:1;pointer-events:none;left:0;right:0;bottom:0;height:clamp(65px,12vh,120px);background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.45) 65%,rgba(255,255,255,.88));}.hero .scroll-link{position:relative;z-index:2}

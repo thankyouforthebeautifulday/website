@@ -106,7 +106,8 @@ const notes = [
   'You can care for someone and still choose to keep your distance; both can exist at the same time.',
   'Give yourself a try!',
   'If you have something you like, don’t let anyone break it — and don’t let yourself break it.',
-  'Look in the mirror with love.'
+  'Look in the mirror with love.',
+  'You just need your hands, a dream in your heart, and some courage maybe.'
 ];
 let noteIndex = 0;
 document.getElementById('thanks').addEventListener('click', event => {

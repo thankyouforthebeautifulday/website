@@ -109,44 +109,6 @@ const notes = [
   'Look in the mirror with love.',
   'You just need your hands, a dream in your heart, and some courage maybe.'
 ];
-const japaneseNotes = [
-  "あなたは、アートのように優美だ。",
-  "この人生でどこまで行けるのか、何ができるのか、確かめてみよう。",
-  "感謝の気持ちと、いつもそばにいてくれる人たちに心を向けてみよう。",
-  "あなたには、誰かの心をいい方向に動かす力がある。",
-  "いつまでも色気を忘れず、かっこよくいこう。",
-  "人生で学ぶ大切なこと。それは、誰にも何にも、おびえずに生きること。",
-  "ゲームをクリアするみたいに、どんなことも乗り越えていこう。あなたならできる。",
-  "勇気を持って。優しくあって。笑顔を忘れずに。",
-  "あなたには、昨日の自分を超えていける強さがある。",
-  "あなたは、自分の人生を創るアーティスト。夢に見た人生を、自分の手でつくっていける。",
-  "あなたの心を重くする人たちに、気を取られなくていい。",
-  "あなたは相変わらず、くそ最高にかっこいい。",
-  "深く息を吸って、「ありがとう」と言ってみよう。",
-  "あなたは、今ちゃんと成長している。",
-  "あなたを愛してくれる人は、いつだっている。",
-  "そういうものだよ。変わったことも受け入れて、やっていこう。",
-  "安心していい。力を抜いて、ゆっくりして。",
-  "強くあれ。勇敢であれ。",
-  "あなたは、自分で思っているよりもずっと美しい。",
-  "自分のかっこよさを失うようなことに、とらわれないで。",
-  "もがくことさえ楽しもう。諦めずにいるあなたは、かっこいい。",
-  "世界は、あなたが思っているよりずっと広い。\n8,000,000,000人を超える人たちが、この世界で生きている。",
-  "今まで見た中で、いちばん美しかった夕焼けを思い出して。",
-  "思い切って、一歩踏み出してみよう。それが誰かの一日を、素敵なものにするかもしれない。",
-  "宇宙はいつだって、諦めない心に恋をする。",
-  "そんなに心配しなくていい。大丈夫だよ。",
-  "今日は、新しい一日。美しい一日。たくさんの可能性とチャンスが、あなたを待っている。",
-  "自分にできると思う範囲を、はるかに超えるような夢を描いてほしい。",
-  "どうせなら、大きくいこうよ。",
-  "思い切って、その夢を追いかけてみない？",
-  "誰が気にする？個性的に、心に残る存在に、誇りを持って。あなたらしくいよう。",
-  "誰かを大切に思いながら、距離を置くことを選んでもいい。その二つは、矛盾しない。",
-  "自分にチャンスをあげてみよう！",
-  "好きなものがあるなら、その気持ちを誰にも壊させないで。そして、自分自身にも壊させないで。",
-  "愛情を込めて鏡を見つめて。",
-  "必要なのはその両手と、心に抱いた夢と，きっとそれから、少しの勇気。"
-];
 let noteIndex = 0;
 
 const closing = document.querySelector('.closing');
@@ -158,9 +120,7 @@ document.getElementById('thanks').addEventListener('click', () => {
   const index = noteIndex++ % notes.length;
   const english = document.createElement('span');
   english.className = 'note-en'; english.lang = 'en'; english.textContent = notes[index];
-  const japanese = document.createElement('span');
-  japanese.className = 'note-ja'; japanese.lang = 'ja'; japanese.textContent = japaneseNotes[index];
-  document.getElementById('thanks-note').replaceChildren(english, japanese);
+  document.getElementById('thanks-note').replaceChildren(english);
   if (reducedMotion) return;
   while (fireworks.children.length > 6) fireworks.firstElementChild.remove();
   for (let burst = 0; burst < 3; burst++) {

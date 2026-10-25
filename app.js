@@ -110,18 +110,31 @@ const notes = [
   'You just need your hands, a dream in your heart, and some courage maybe.'
 ];
 let noteIndex = 0;
-document.getElementById('thanks').addEventListener('click', event => {
+
+const closing = document.querySelector('.closing');
+const fireworks = document.createElement('div');
+fireworks.className = 'fireworks';
+fireworks.setAttribute('aria-hidden', 'true');
+closing.prepend(fireworks);
+document.getElementById('thanks').addEventListener('click', () => {
   document.getElementById('thanks-note').textContent = notes[noteIndex++ % notes.length];
   if (reducedMotion) return;
-  const rect = event.currentTarget.getBoundingClientRect();
-  for (let i = 0; i < 12; i++) {
-    const dot = document.createElement('span'); dot.className = 'spark'; dot.style.background = '#fff';
-    dot.style.left = `${rect.left + rect.width / 2}px`; dot.style.top = `${rect.top + rect.height / 2}px`;
-    const angle = Math.PI * 2 * i / 12;
-    dot.style.setProperty('--dx', `${Math.cos(angle) * 120}px`); dot.style.setProperty('--dy', `${Math.sin(angle) * 100}px`);
-    document.body.appendChild(dot); dot.addEventListener('animationend', () => dot.remove());
+  while (fireworks.children.length > 6) fireworks.firstElementChild.remove();
+  for (let burst = 0; burst < 3; burst++) {
+    const bloom = document.createElement('span');
+    bloom.className = 'firework-bloom';
+    bloom.style.left = (12 + Math.random() * 76) + '%';
+    bloom.style.top = (12 + Math.random() * 70) + '%';
+    for (let i = 0; i < 20; i++) {
+      const dot = document.createElement('i');
+      const angle = Math.PI * 2 * i / 20 + Math.random() * .12;
+      const radius = 45 + Math.random() * 65;
+      dot.style.setProperty('--dx', Math.cos(angle) * radius + 'px');
+      dot.style.setProperty('--dy', Math.sin(angle) * radius + 'px');
+      dot.style.animationDelay = burst * 150 + 'ms';
+      bloom.appendChild(dot);
+    }
+    fireworks.appendChild(bloom);
+    setTimeout(() => bloom.remove(), 1600);
   }
 });
-
-
-

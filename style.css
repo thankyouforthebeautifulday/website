@@ -35,3 +35,14 @@ header nav{display:flex;gap:32px;align-items:center}.brand-links{padding:0 8% 90
 @media(prefers-reduced-motion:reduce){.tap-label,.tap-label::after{animation:none}.tap-label::after{display:none}}
 /* A soft white edge hints at the content below the hero. */
 .hero{position:relative;isolation:isolate}.hero::after{content:"";position:absolute;z-index:1;pointer-events:none;left:0;right:0;bottom:0;height:clamp(140px,24vh,220px);background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.25) 40%,rgba(255,255,255,.45) 72%,rgba(255,255,255,.6));}.hero .scroll-link{position:relative;z-index:0}
+
+.closing{position:relative;isolation:isolate;overflow:hidden;gap:32px;min-height:660px}
+.closing>.section-label,.closing>.thanks-button,.closing>.thanks-note{position:relative;z-index:1}
+.closing .thanks-button{width:clamp(210px,24vw,280px);height:clamp(210px,24vw,280px);min-width:0;flex-shrink:0;border-radius:50%;padding:24px;background:#fff;color:var(--red);border:1px solid #fff;justify-content:center;box-shadow:0 0 0 10px #ffffff12;transition:transform .25s,box-shadow .25s}
+.closing .thanks-button:hover{transform:scale(1.04) rotate(-3deg);box-shadow:0 0 0 18px #ffffff18}
+.closing .thanks-button:active{transform:scale(.95)}
+.thanks-label{flex-direction:column;gap:20px}.thanks-label>span:last-child{font-family:Georgia,serif;font-size:clamp(30px,3.6vw,42px);font-style:italic}
+.closing .tap-label{background:var(--red);color:white;padding:8px 14px;font-size:13px}.closing .thanks-note{margin:0;max-width:650px}
+.fireworks{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}.firework-bloom{position:absolute;width:0;height:0}.firework-bloom i{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #fff9;opacity:0;animation:firework-light 1.15s cubic-bezier(.12,.65,.3,1) both}
+@keyframes firework-light{0%{transform:translate(0,0) scale(.3);opacity:0}8%{opacity:1}65%{opacity:.85}100%{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}}
+@media(max-width:700px){.closing{min-height:620px;gap:28px}.closing .thanks-note{min-height:8.25em}}

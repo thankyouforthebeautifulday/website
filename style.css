@@ -56,3 +56,5 @@ header nav{display:flex;gap:32px;align-items:center}.brand-links{padding:0 8% 90
 .closing .thanks-button:focus-visible{outline:none;box-shadow:0 0 0 5px var(--red),0 0 0 8px #fff,0 0 0 16px #ffffff20}
 .closing .thanks-button:hover{transform:scale(1.04)}
 .closing .thanks-button:active{transform:scale(.95)}
+
+.closing .thanks-note{width:100%;min-height:160px}.note-en,.note-ja{display:block}.note-en{font-size:20px;line-height:1.6}.note-ja{font-size:16px;line-height:1.85;margin-top:14px;overflow-wrap:anywhere}@media(max-width:700px){.closing .thanks-note{min-height:240px}.note-en{font-size:18px}.note-ja{font-size:14px}}

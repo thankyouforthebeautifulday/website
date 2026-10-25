@@ -46,3 +46,13 @@ header nav{display:flex;gap:32px;align-items:center}.brand-links{padding:0 8% 90
 .fireworks{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}.firework-bloom{position:absolute;width:0;height:0}.firework-bloom i{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #fff9;opacity:0;animation:firework-light 1.15s cubic-bezier(.12,.65,.3,1) both}
 @keyframes firework-light{0%{transform:translate(0,0) scale(.3);opacity:0}8%{opacity:1}65%{opacity:.85}100%{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}}
 @media(max-width:700px){.closing{min-height:620px;gap:28px}.closing .thanks-note{min-height:8.25em}}
+
+/* Independent positioning keeps the thank-you at the exact circle center. */
+.closing .thanks-button{appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent;outline:none;user-select:none}
+.closing .thanks-label{position:absolute;inset:0;display:grid;place-items:center;gap:0;pointer-events:none}
+.closing .thanks-label>span:last-child{line-height:1;white-space:nowrap}
+.closing .tap-label{position:absolute;top:18%;left:50%;translate:-50% 0}
+.closing .thanks-button:focus{outline:none}
+.closing .thanks-button:focus-visible{outline:none;box-shadow:0 0 0 5px var(--red),0 0 0 8px #fff,0 0 0 16px #ffffff20}
+.closing .thanks-button:hover{transform:scale(1.04)}
+.closing .thanks-button:active{transform:scale(.95)}

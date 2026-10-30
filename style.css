@@ -75,3 +75,13 @@ header nav .nav-link:focus-visible{outline:2px solid #fff;outline-offset:6px}
 @media(max-width:1100px){header{height:auto;min-height:190px;grid-template-columns:1fr;justify-items:center;gap:14px;padding:18px 4%}header .wordmark{justify-self:center;width:130px}header nav{grid-column:1}.hero{min-height:calc(100svh - 190px)}}
 @media(max-width:600px){header nav{width:100%;max-width:460px;gap:10px;padding:30px 14px 16px;border-radius:18px}header nav .nav-link{width:auto;flex:1;min-width:0;font-size:14px;height:40px}.nav-wave{top:-24px;height:42px}header{gap:12px}.hero{min-height:calc(86svh - 190px)}}
 .nav-wave{mask-image:linear-gradient(to right,transparent,#000 15%,#000 85%,transparent)}
+
+/* Only the hovered menu item carries the red wave. */
+header nav{background:transparent}
+header nav .nav-link{border-color:var(--red);color:var(--red);background:transparent}
+.nav-wave{fill:var(--red);opacity:0}
+header nav .nav-link:hover{background:var(--red);color:#fff;border-color:transparent}
+header nav .nav-link:hover .nav-wave{opacity:1}
+header nav .nav-link:hover .nav-wave g{animation-play-state:running}
+header nav .nav-link:hover .nav-text{text-decoration:none}
+header nav .nav-link:focus-visible{outline-color:var(--red)}

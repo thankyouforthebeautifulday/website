@@ -141,3 +141,19 @@ document.getElementById('thanks').addEventListener('click', () => {
     setTimeout(() => bloom.remove(), 1600);
   }
 });
+
+const navLinks = Array.from(document.querySelectorAll('header .nav-link'));
+let selectedNav = navLinks[0];
+function showNavWave(link) {
+  navLinks.forEach(item => item.classList.toggle('is-selected', item === link));
+}
+showNavWave(selectedNav);
+navLinks.forEach(link => {
+  link.addEventListener('pointerenter', () => showNavWave(link));
+  link.addEventListener('focus', () => showNavWave(link));
+  link.addEventListener('click', () => { selectedNav = link; showNavWave(link); });
+});
+document.querySelector('header nav').addEventListener('pointerleave', () => showNavWave(selectedNav));
+document.querySelector('header nav').addEventListener('focusout', event => {
+  if (!event.currentTarget.contains(event.relatedTarget)) showNavWave(selectedNav);
+});
